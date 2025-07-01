@@ -700,30 +700,23 @@
             }, 1500);
         });
 
-         // Resume download functionality
-        function downloadResume() {
-            // Replace this with your actual resume file path
-            const resumeUrl = './assets/resume.pdf'; // Use relative path
-            
-            // Create a temporary link element
-            const link = document.createElement('a');
-            link.href = resumeUrl;
-            link.download = 'Madushan_Resume.pdf';
-            
-            // Trigger download
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            // Optional: Track download analytics
-            console.log('Resume downloaded');
-            
-            // You can add Google Analytics or other tracking here
-            // gtag('event', 'download', {
-            //     'event_category': 'Resume',
-            //     'event_label': 'PDF Download'
-            // });
-        }
+function downloadResume() {
+    const resumeUrl = 'https://raw.githubusercontent.com/madushansivam/portfolio/master/assets/Resume_Madushan_101.5.pdf';
+
+    // Create a temporary link element
+    const link = document.createElement('a');
+    link.href = resumeUrl;
+    link.download = 'Madushan_Resume.pdf';  // This suggests the filename for download
+
+    // Append the link, trigger click and remove it
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // Optional analytics tracking
+    console.log('Resume downloaded');
+}
+
 
         // Add intersection observer for animations
         const observerOptions = {
