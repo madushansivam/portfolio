@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samayasivam Madushan - UI/UX Designer & Front-End Developer</title>
+    <meta name="description" content="Portfolio of Samayasivam Madushan - Creative UI/UX Designer and Front-End Developer specializing in modern web experiences.">
+    
+    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="switch.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    
+   
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">SM</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle"></button>
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Samayasivam Madushan</h1>
+            <p class="hero-subtitle typewriter">UI/UX Designer & Front-End Developer</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    <span>View My Work</span>
+                    <span>🚀</span>
+                </a>
+            </div>
+        </div>
+        <div class="avatar-container">
+            <div class="avatar-front">
+                <img src="file:///F:/Portfolio/assets/madu.png" alt="Samayasivam Madushan"
+                     style="width:100%;height:100%;object-fit:cover;border-radius:50%;border:4px solid white;box-shadow:0 4px 20px rgba(0,0,0,0.15);"
+                     onerror="this.style.display='none';this.parentNode.innerHTML='<i class=\'fas fa-user\'></i>';">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <h2 class="section-title fade-in">About Me</h2>
+        <div class="about-content">
+            <div class="about-image">
+               <img src="file:///F:/Portfolio/assets/madu_1.jpg" alt="Samayasivam Madushan">
+            </div>
+            <div class="about-text slide-in-right">
+                <h3>Passionate Developer & Designer</h3>
+                <p>
+                    I'm a dedicated UI/UX Designer and Front-End Developer with a passion for creating exceptional digital experiences. 
+                    With expertise in modern web technologies and a keen eye for design, I transform ideas into engaging, user-friendly interfaces.
+                </p>
+                <p>
+                    My journey in tech spans across various domains - from developing robust inventory systems to creating interactive games 
+                    and building responsive WordPress sites. I believe in the power of clean code, intuitive design, and continuous learning.
+                </p>
+                <p>
+                    When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge 
+                    with the developer community.
+                </p>
+            </div>
+        </div>
+        
+ <!-- Timeline Section -->
+<div class="timeline-container fade-in">
+    <h3 class="timeline-title">My Journey</h3>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-dot"></div> <!-- Fixed: Added missing closing tag -->
+            <div class="timeline-content">
+                <h4>2025 - Present</h4>
+                <h5>UI/UX Designer & Front-End Developer</h5>
+                <p>Freelance work focusing on modern web applications, interactive designs, and user experience optimization.</p>
+            </div>
+        </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>2024</h4>
+                        <h5>SLIATE & University of Moratuwa</h5>
+                        <p>Currently reading BIT in Information Technology at the University of
+Moratuwa and SriLanka Institute of Advanced Technological Education.
+(SLIATE)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>2024</h4>
+                        <h5>Early Development Journey</h5>
+                        <p>Started learning web technologies including HTML, CSS, JavaScript, and began building personal projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <h2 class="section-title fade-in">Skills & Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-category fade-in">
+                <h3>Frontend Development</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>HTML5</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="95"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>CSS3</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>JavaScript</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category fade-in">
+                <h3>Design Tools</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Figma</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Adobe XD</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Photoshop</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="80"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category fade-in">
+                <h3>Backend & Tools</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>C#</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="80"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>WordPress</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>SQL</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="75"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <h2 class="section-title fade-in">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <h3 class="project-title">Inventory Tracking System</h3>
+                <p class="project-description">
+                    A comprehensive inventory management system built with C# and SQL Server, featuring real-time tracking, 
+                    automated alerts, and detailed reporting capabilities.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">C#</span>
+                    <span class="tag">SQL Server</span>
+                    <span class="tag">WinForms</span>
+                    <span class="tag">.NET</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link">Live Demo</a>
+                    <a href="https://github.com/madushansivam" class="project-link">GitHub</a>
+                </div>
+            </div>
+            
+            <div class="project-card fade-in">
+                <h3 class="project-title">2D JavaScript Game</h3>
+                <p class="project-description">
+                    An engaging 2D adventure game built with vanilla JavaScript and HTML5 Canvas, featuring smooth animations, 
+                    collision detection, and progressive difficulty levels.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">HTML5 Canvas</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">Game Development</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link">Play Game</a>
+                    <a href="https://github.com/madushansivam" class="project-link">GitHub</a>
+                </div>
+            </div>
+            
+            <div class="project-card fade-in">
+                <h3 class="project-title">WordPress E-Commerce Site</h3>
+                <p class="project-description">
+                    A fully functional e-commerce platform with custom theme development, payment integration, 
+                    and advanced product management features for online retail businesses.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">WordPress</span>
+                    <span class="tag">WooCommerce</span>
+                    <span class="tag">PHP</span>
+                    <span class="tag">MySQL</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link">Live Site</a>
+                    <a href="https://github.com/madushansivam" class="project-link">GitHub</a>
+                </div>
+            </div>
+            
+            <div class="project-card fade-in">
+                <h3 class="project-title">Programming Master Tool</h3>
+                <p class="project-description">
+                    An educational platform designed to help programmers master coding concepts through interactive 
+                    exercises, code challenges, and progress tracking.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">Education</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link">Try Tool</a>
+                    <a href="https://github.com/madushansivam" class="project-link">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles & Certifications 
+    <section class="section" id="articles">
+        <h2 class="section-title fade-in">Articles & Certifications</h2>
+        <div class="articles-grid">
+            <div class="article-card fade-in">
+                <div class="certificate-badge">Certified</div>
+                <h3>Google AI for JavaScript Developers</h3>
+                <p>
+                    Comprehensive certification covering machine learning integration in JavaScript applications, 
+                    TensorFlow.js implementation, and AI-powered web development.
+                </p>
+                <a href="#" class="project-link">View Certificate</a>
+            </div>
+            
+            <div class="article-card fade-in">
+                <div class="certificate-badge">Certified</div>
+                <h3>IBM Cloud Introduction</h3>
+                <p>
+                    Professional certification in cloud computing fundamentals, IBM Cloud services, 
+                    and enterprise-level cloud application deployment strategies.
+                </p>
+                <a href="#" class="project-link">View Certificate</a>
+            </div>
+            
+            <div class="article-card fade-in">
+                <div class="certificate-badge">Certified</div>
+                <h3>LinuxFoundationX Certifications</h3>
+                <p>
+                    Multiple certifications in Linux system administration, open-source development, 
+                    and enterprise Linux deployment and management.
+                </p>
+                <a href="#" class="project-link">View Certificates</a>
+            </div>
+        </div>
+-->
+
+        <!-- Coding Profiles -->
+        <div class="coding-profiles-section fade-in">
+            <h3 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Coding Profiles</h3>
+            <div class="coding-profiles-grid">
+                <a href="https://github.com/madushansivam" class="profile-card" target="_blank" rel="noopener">
+                    <div class="profile-icon"><!-- From Uiverse.io by vinodjangid07 --> 
+<button class="Btn">
+ <span class="svgContainer">
+   <svg fill="white" viewBox="0 0 496 512" height="1.6em"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+ </span>
+ <span class="BG"></span>
+</button></div>
+                    <h4>GitHub</h4>
+                    <p>View my open-source projects and contributions</p>
+                    <div class="profile-stats">
+                        <span>50+ Repositories</span>
+                        <span>100+ Stars</span>
+                    </div>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/madushansivam/" class="profile-card" target="_blank" rel="noopener">
+                    <div class="profile-icon">
+                        <!-- From Uiverse.io by vinodjangid07 --> 
+<button class="Btn">
+  <span class="svgContainer">
+    <svg
+      viewBox="0 0 448 512"
+      height="1.6em"
+      xmlns="http://www.w3.org/2000/svg"
+      class="svgIcon"
+      fill="white"
+    >
+      <path
+        d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"
+      ></path>
+    </svg>
+  </span>
+  <span class="BG1"></span>
+</button>
+
+                    </div>
+                    <h4>LinkedIn</h4>
+                    <p>Connect with me professionally</p>
+                    <div class="profile-stats">
+                        <span>500+ Connections</span>
+                        <span>Active Networker</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="profile-card" target="_blank" rel="noopener">
+                    <div class="profile-icon">📝</div>
+                    <h4>Blog</h4>
+                    <p>Read my latest articles and insights</p>
+                    <div class="profile-stats">
+                        <span>20+ Articles</span>
+                        <span>Tech Writing</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="profile-card" target="_blank" rel="noopener">
+                    <div class="profile-icon">⚡</div>
+                    <h4>Portfolio</h4>
+                    <p>Explore my complete work collection</p>
+                    <div class="profile-stats">
+                        <span>15+ Projects</span>
+                        <span>Full-Stack</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Download Section -->
+    <section class="section" id="resume">
+        <div class="resume-container fade-in">
+            <div class="resume-content">
+                <h2 class="section-title">Download My Resume</h2>
+                <p class="resume-description">
+                    Get a detailed overview of my skills, experience, and achievements in a professionally formatted PDF. Discover my journey and expertise in a comprehensive document.
+                </p>
+                <div class="resume-features">
+                    <div class="resume-feature">
+                        <span class="feature-icon">📋</span>
+                        <span class="feature-text">Complete Work History</span>
+                    </div>
+                    <div class="resume-feature">
+                        <span class="feature-icon">🎯</span>
+                        <span class="feature-text">Technical Skills</span>
+                    </div>
+                    <div class="resume-feature">
+                        <span class="feature-icon">🏆</span>
+                        <span class="feature-text">Certifications</span>
+                    </div>
+                    <div class="resume-feature">
+                        <span class="feature-icon">📚</span>
+                        <span class="feature-text">Education</span>
+                    </div>
+                </div>
+                <a href="#" class="resume-download-btn" id="downloadResume" onclick="downloadResume()">
+                    <span>Download Resume</span>
+                    <span class="download-icon">📄</span>
+                </a>
+            </div>
+            <div class="resume-visual">
+                <div class="resume-preview">
+                    <div class="resume-stack">
+                        <div class="resume-page">
+                            <img src="file:///F:/Portfolio/assets/1.png" alt="Resume Preview Page 1">
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+    <!-- Contact Section    -->
+    <section class="section" id="contact">
+        <h2 class="section-title fade-in">Get In Touch</h2>
+        <div class="contact-content">
+            <div class="contact-info slide-in-left">
+                <h3>Contact Information</h3>
+                <div class="contact-item">
+                    <span style="font-size: 1.5rem;">📧</span>
+                    <div>
+                        <strong>Email</strong><br>
+                        <a href="mailto:madushansivam@gmail.com">madushansivam@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span style="font-size: 1.5rem;">📱</span>
+                    <div>
+                        <strong>Phone</strong><br>
+                        <a href="tel:+94741966711">+94-741966711</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span style="font-size: 1.5rem;">📍</span>
+                    <div>
+                        <strong>Location</strong><br>
+                        244/1, Badulla Road, Hali-ela, Sri Lanka
+                    </div>
+                </div>
+            </div>
+            
+            <form class="contact-form slide-in-right" id="contactForm">
+                <div class="form-group">
+                    <input type="text" class="form-input" id="name" placeholder=" " required>
+                    <label class="form-label" for="name">Your Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-input" id="email" placeholder=" " required>
+                    <label class="form-label" for="email">Your Email</label>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-textarea" id="message" rows="5" placeholder=" " required></textarea>
+                    <label class="form-label" for="message">Your Message</label>
+                </div>
+                <button type="submit" class="btn btn-primary" id="submitBtn">
+                    <span>Send Message</span>
+                    <span>✉️</span>
+                </button>
+            </form>
+        </div>
+        </div>
+
+    <!-- Footer
+    <footer class="footer">
+        <p>&copy; 2025 Samayasivam Madushan. All rights reserved.</p>
+    </footer>
+    -->
+    <script src="script.js"></script>
+ 
+</body>
+</html>
