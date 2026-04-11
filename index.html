@@ -27,13 +27,13 @@
 
 
   <!-- NAV -->
+  <!-- FIX 4: Removed Blog nav link — section has zero content, don't advertise it -->
   <nav id="nav">
     <a href="#" class="nav-logo">MS<span>.</span></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#case-studies">Case Studies</a></li>
-      <li><a href="#blog">Blog</a></li>
       <li><a href="#contact" class="nav-cta">Hire Me</a></li>
     </ul>
   </nav>
@@ -121,24 +121,25 @@
   </div>
 
   <!-- ══════════════ STATS ══════════════ -->
+  <!-- FIX 3: Replaced pointless small-number counters with real impactful numbers from actual experience -->
   <div class="stats-bar">
     <div class="container">
       <div class="stats-track">
         <div class="stat-item">
           <div class="stat-num"><span class="counter" data-target="5">0</span><span class="accent-dot">+</span></div>
-          <div class="stat-label">Projects Shipped</div>
+          <div class="stat-label">Live Projects</div>
         </div>
         <div class="stat-item">
           <div class="stat-num"><span class="counter" data-target="3">0</span><span class="accent-dot">+</span></div>
           <div class="stat-label">Years Building</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num"><span class="counter" data-target="4">0</span><span class="accent-dot"></span></div>
-          <div class="stat-label">Tech Stacks Mastered</div>
+          <div class="stat-num"><span class="counter" data-target="300">0</span><span class="accent-dot">+</span></div>
+          <div class="stat-label">Community Members Reached</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num"><span class="counter" data-target="1">0</span><span class="accent-dot"></span></div>
-          <div class="stat-label">Studio Founded</div>
+          <div class="stat-num"><span class="counter" data-target="25">0</span><span class="accent-dot"></span></div>
+          <div class="stat-label">GN Divisions Surveyed</div>
         </div>
       </div>
     </div>
@@ -170,7 +171,7 @@
         </div>
 
         <div class="about-text reveal" style="transition-delay:0.15s">
-          <div class="label" style="margin-bottom:12px">Frontend Developer · UI/UX Designer · Indie Game Dev</div>
+          <div class="label" style="margin-bottom:12px">Frontend Developer</div>
           <h2>I build things people actually use — and remember.</h2>
           <p class="about-bio">I'm <strong>Madushan Samayasivam</strong> — a frontend developer and creative
             technologist based in Sri Lanka.
@@ -185,7 +186,7 @@
           <div class="about-highlights">
             <div class="highlight-item">
               <div class="highlight-icon">🎮</div>
-              <div class="highlight-title">Game Studio Founder</div>
+              <div class="highlight-title">Indie Game Dev</div>
               <div class="highlight-sub">Nānmīn Game Studio</div>
             </div>
             <div class="highlight-item">
@@ -209,7 +210,8 @@
             <a href="https://github.com/madushansivam" class="tag" target="_blank">GitHub ↗</a>
             <a href="https://linkedin.com/in/madushansivam" class="tag" target="_blank">LinkedIn ↗</a>
             <a href="https://behance.net/madushasamayas" class="tag" target="_blank">Behance ↗</a>
-            <a href="assets/Madushan_ Frontend Developer_ 015.pdf" class="tag" download>Resume ↓</a>
+            <!-- FIX 6: Renamed resume file from "Madushan_ Frontend Developer_ 015.pdf" to clean filename -->
+            <a href="assets/Madushan_Samayasivam_Resume.pdf" class="tag" download>Resume ↓</a>
           </div>
         </div>
       </div>
@@ -222,7 +224,7 @@
   <section id="experience">
     <div class="experience-inner">
       <div class="experience-header reveal">
-        <div class="section-label">Journey</div>
+        <div class="section-index">02 - Journey</div>
         <h2 class="experience-title">Where I've been<br />and where I'm going.</h2>
       </div>
       <div class="timeline">
@@ -278,8 +280,8 @@
   <section id="projects">
     <div class="projects-header reveal">
       <div>
-        <div class="section-label">Selected Work</div>
-        <h2 class="projects-title">Things I've<br />built.</h2>
+        <div class="section-index">03 - Selected Work</div>
+        <h2 class="projects-title">Things I've built.</h2>
       </div>
       <div class="projects-count" id="proj-total-display">05</div>
     </div>
@@ -359,7 +361,7 @@
     <div class="container">
       <div class="section-header reveal">
         <div>
-          <div class="section-index">03 — CAPABILITIES</div>
+          <div class="section-index"> 04 — CAPABILITIES</div>
           <h2 class="section-heading">Skills<span class="accent-dot">.</span></h2>
         </div>
       </div>
@@ -477,7 +479,7 @@
     <div class="container">
       <div class="section-header reveal">
         <div>
-          <div class="section-index">04 — PROCESS</div>
+          <div class="section-index">05 — PROCESS</div>
           <h2 class="section-heading">Case Studies<span class="accent-dot">.</span></h2>
         </div>
       </div>
@@ -651,69 +653,13 @@
     </div>
   </section>
 
-  <!-- ══════════════ BLOG ══════════════ -->
-  <section id="blog">
-    <div class="container">
-      <div class="section-header reveal">
-        <div>
-          <div class="section-index">05 — WRITING</div>
-          <h2 class="section-heading">Blog<span class="accent-dot">.</span></h2>
-        </div>
-        <span class="label" style="color:var(--accent)">Coming soon</span>
-      </div>
-
-      <div class="blog-grid">
-        <div class="blog-card reveal">
-          <div class="blog-card-thumb">🎮</div>
-          <div class="blog-card-body">
-            <div class="blog-category">Game Dev</div>
-            <h3>Why I Built a Multiplayer Game in Vanilla JavaScript (And What I Learned)</h3>
-            <p>No framework, no backend, no excuses. Here's what it actually takes to build multiplayer in the browser
-              from scratch.</p>
-            <div class="blog-meta">
-              <span>Coming Soon</span>
-              <span>8 min read</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="blog-card reveal" style="transition-delay:0.1s">
-          <div class="blog-card-thumb">🖼️</div>
-          <div class="blog-card-body">
-            <div class="blog-category">Frontend Engineering</div>
-            <h3>Perceptual Hashing in the Browser: DCT Without a Backend</h3>
-            <p>How I implemented image similarity detection entirely client-side using the Canvas API, Web Workers, and
-              DCT math.</p>
-            <div class="blog-meta">
-              <span>Coming Soon</span>
-              <span>12 min read</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="blog-card reveal" style="transition-delay:0.2s">
-          <div class="blog-card-thumb">🌐</div>
-          <div class="blog-card-body">
-            <div class="blog-category">Career & Studio</div>
-            <h3>Building a Game Studio in Sri Lanka: The Honest Reality</h3>
-            <p>What it's actually like to start an indie game studio in a country where the industry barely exists. The
-              wins, the walls, the why.</p>
-            <div class="blog-meta">
-              <span>Coming Soon</span>
-              <span>6 min read</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ══════════════ CERTIFICATIONS ══════════════ -->
+  <!-- FIX 1: Replaced all placeholder/fake certs with actual verified credentials from resume -->
   <section id="certifications" style="background: var(--bg);">
     <div class="container">
       <div class="section-header reveal">
         <div>
-          <div class="section-index">07 — CREDENTIALS</div>
+          <div class="section-index">06 — CREDENTIALS</div>
           <h2 class="section-heading">Certifications<span class="accent-dot">.</span></h2>
         </div>
       </div>
@@ -723,19 +669,19 @@
           <div class="cert-icon">🎓</div>
           <div class="cert-issuer">SLIATE</div>
           <div class="cert-name">Higher National Diploma in Information Technology (HNDIT)</div>
-          <div class="cert-year">In Progress · 2024–2026</div>
+          <div class="cert-year">In Progress · 2023–2026</div>
         </div>
         <div class="cert-card reveal" style="transition-delay:0.07s">
           <div class="cert-icon">🌐</div>
-          <div class="cert-issuer">Coursera / Online</div>
-          <div class="cert-name">Responsive Web Design Fundamentals</div>
-          <div class="cert-year">Add Year</div>
+          <div class="cert-issuer">Woocurs Academy</div>
+          <div class="cert-name">Web Development Workshop</div>
+          <div class="cert-year">2025</div>
         </div>
         <div class="cert-card reveal" style="transition-delay:0.14s">
-          <div class="cert-icon">🎮</div>
-          <div class="cert-issuer">Unity Technologies</div>
-          <div class="cert-name">Unity Junior Programmer Pathway</div>
-          <div class="cert-year">Add Year</div>
+          <div class="cert-icon">📡</div>
+          <div class="cert-issuer">Hashtag Generation</div>
+          <div class="cert-name">Citizen Reporters' Training</div>
+          <div class="cert-year">2024</div>
         </div>
         <div class="cert-card reveal" style="transition-delay:0.21s">
           <div class="cert-icon">🏆</div>
@@ -744,11 +690,7 @@
           <div class="cert-year">2026</div>
         </div>
       </div>
-
-      <div class="testimonials-note reveal" style="transition-delay:0.3s;margin-top:24px;">
-        <p>Fill in your actual certifications — Coursera, LinkedIn Learning, freeCodeCamp, etc. Every real cert adds
-          credibility signal.</p>
-      </div>
+      <!-- FIX 1 CONT: Removed the dev placeholder note that was publicly visible -->
     </div>
   </section>
 
@@ -757,7 +699,7 @@
     <div class="container">
       <div class="section-header reveal">
         <div>
-          <div class="section-index">08 — GET IN TOUCH</div>
+          <div class="section-index">07 — GET IN TOUCH</div>
           <h2 class="section-heading">Contact<span class="accent-dot">.</span></h2>
         </div>
       </div>
@@ -774,10 +716,7 @@
             <div class="ci-icon">📧</div>
             <div>
               <div class="ci-label">Email</div>
-              <div class="ci-text"><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                  data-cfemail="b1d9d4dddddef1dcd0d5c4c2d9d0dfc2d8c7d0dc9fd5d4c7"><span class="__cf_email__"
-                    data-cfemail="f499959081879c959a879d829599b49399959d98da979b99">madushansivam@gmail.com</span></a>
-              </div>
+              <div class="ci-text"><a href="mailto:madushansivam@gmail.com">madushansivam@gmail.com</a></div>
             </div>
           </div>
           <div class="contact-info-item">
@@ -805,26 +744,27 @@
           </div>
         </div>
 
+        <!-- FIX 5: Form now POSTs to Formspree — replace YOUR_FORM_ID with your actual ID from formspree.io -->
         <div class="reveal" style="transition-delay:0.15s">
-          <form class="contact-form" onsubmit="handleForm(event)">
+          <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label">Name</label>
-                <input type="text" class="form-control" placeholder="Your name" required>
+                <input type="text" name="name" class="form-control" placeholder="Your name" required>
               </div>
               <div class="form-group">
                 <label class="form-label">Email</label>
-                <input type="email" class="form-control" placeholder="your@email.com" required>
+                <input type="email" name="email" class="form-control" placeholder="your@email.com" required>
               </div>
             </div>
             <div class="form-group">
               <label class="form-label">Subject</label>
-              <input type="text" class="form-control" placeholder="Project idea, job opportunity, collaboration..."
+              <input type="text" name="subject" class="form-control" placeholder="Project idea, job opportunity, collaboration..."
                 required>
             </div>
             <div class="form-group">
               <label class="form-label">Message</label>
-              <textarea class="form-control" placeholder="Tell me about what you're building..."></textarea>
+              <textarea name="message" class="form-control" placeholder="Tell me about what you're building..."></textarea>
             </div>
             <button type="submit" class="btn-primary" style="align-self:flex-start;">
               Send Message
@@ -849,13 +789,12 @@
           <a href="https://behance.net/madushasamayas" target="_blank">Behance</a>
           <a href="#contact">Contact</a>
         </div>
-        <div class="footer-copy">© 2025 Madushan Samayasivam — All rights reserved</div>
+        <!-- FIX 2: Updated year from 2025 to 2026 -->
+        <div class="footer-copy">© 2026 Madushan Samayasivam — All rights reserved</div>
       </div>
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script src="script.js"></script>
 </body>
 
