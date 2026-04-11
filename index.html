@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Madushan Samayasivam — Frontend Developer & UI/UX Designer</title>
+  <meta name="description"
+    content="Frontend Developer, UI/UX Designer, and Indie Game Developer based in Sri Lanka. Building fast, beautiful, and functional digital products.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500&family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=DM+Mono:wght@300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <!-- GSAP core + Draggable (required for projects slider) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+  <!-- Three.js (required for hero canvas) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- CURSOR -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">MS<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#case-studies">Case Studies</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+    </ul>
+  </nav>
+
+  <!-- SOCIAL SIDEBAR -->
+  <aside class="social-sidebar">
+    <a href="https://github.com/madushansivam" class="social-link" target="_blank" title="GitHub">
+      <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+      </svg>
+    </a>
+    <a href="https://linkedin.com/in/madushansivam" class="social-link" target="_blank" title="LinkedIn">
+      <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+      </svg>
+    </a>
+    <a href="https://behance.net/madushasamayas" class="social-link" target="_blank" title="Behance">
+      <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z" />
+      </svg>
+    </a>
+  </aside>
+
+  <!-- ══════════════ HERO ══════════════ -->
+  <section id="hero">
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-number">01</div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <div class="hero-status">
+            <div class="status-dot"></div>
+            <span class="label">Available for opportunities</span>
+          </div>
+          <span class="label">Based in Sri Lanka</span>
+        </div>
+
+        <h1 class="hero-name">
+          Madushan
+          <span class="line-2">Sivam<span class="accent-dot">.</span></span>
+        </h1>
+
+        <div class="hero-bottom">
+          <p class="hero-role">
+            <strong>Frontend Developer</strong> &amp; <strong>UI/UX Designer</strong><br>
+            <span class="serif">crafting interfaces that think, breathe, and play.</span>
+          </p>
+
+          <div class="hero-divider"></div>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary">
+              View Work
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="#contact" class="btn-ghost">
+              Let's Talk
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span class="label" style="writing-mode: vertical-rl; font-size:0.6rem;">scroll</span>
+    </div>
+  </section>
+
+  <!-- AVAILABILITY BAND -->
+  <div class="availability-band">
+    <span class="availability-text">
+      ✦ Available for freelance & full-time roles &nbsp;&nbsp;&nbsp;&nbsp; ✦ Open to remote & on-site positions
+      &nbsp;&nbsp;&nbsp;&nbsp; ✦ Frontend Development · UI/UX Design · Game Development &nbsp;&nbsp;&nbsp;&nbsp; ✦
+      Available for freelance & full-time roles &nbsp;&nbsp;&nbsp;&nbsp; ✦ Open to remote & on-site positions
+      &nbsp;&nbsp;&nbsp;&nbsp; ✦ Frontend Development · UI/UX Design · Game Development &nbsp;&nbsp;&nbsp;&nbsp;
+    </span>
+  </div>
+
+  <!-- ══════════════ STATS ══════════════ -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-track">
+        <div class="stat-item">
+          <div class="stat-num"><span class="counter" data-target="5">0</span><span class="accent-dot">+</span></div>
+          <div class="stat-label">Projects Shipped</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num"><span class="counter" data-target="3">0</span><span class="accent-dot">+</span></div>
+          <div class="stat-label">Years Building</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num"><span class="counter" data-target="4">0</span><span class="accent-dot"></span></div>
+          <div class="stat-label">Tech Stacks Mastered</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num"><span class="counter" data-target="1">0</span><span class="accent-dot"></span></div>
+          <div class="stat-label">Studio Founded</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ ABOUT ══════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <div class="section-index">01 — WHO I AM</div>
+          <h2 class="section-heading">About<span class="accent-dot">.</span></h2>
+        </div>
+        <a href="https://madushansivam.github.io/portfolio" class="btn-ghost" target="_blank">Portfolio ↗</a>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-photo-wrap reveal">
+          <div class="about-photo-accent"></div>
+          <div class="about-photo-frame">
+            <img src="assets/madu_1.jpg"
+              onerror="this.style.display='none'; this.parentElement.style.background='var(--surface)'; this.parentElement.innerHTML += '<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:4rem;\'>🧑‍💻</div>'"
+              alt="Madushan Samayasivam" loading="lazy">
+          </div>
+          <div class="about-photo-label">
+            <div class="label">frontend developer</div>
+            <div style="font-size:0.75rem;color:var(--text);margin-top:4px;">Badulla, Sri Lanka</div>
+          </div>
+        </div>
+
+        <div class="about-text reveal" style="transition-delay:0.15s">
+          <div class="label" style="margin-bottom:12px">Frontend Developer · UI/UX Designer · Indie Game Dev</div>
+          <h2>I build things people actually use — and remember.</h2>
+          <p class="about-bio">I'm <strong>Madushan Samayasivam</strong> — a frontend developer and creative
+            technologist based in Sri Lanka.
+            My work sits at the intersection of <strong>engineering precision</strong> and <strong>visual
+              storytelling</strong>.
+            I don't build websites. I build experiences — ones that feel intentional, alive, and impossible to
+            ignore.<br /><br />
+            From perceptual image engines to immersive SaaS platforms, I push what the browser can do:
+            Three.js environments, GSAP choreography, WebGL shaders, interaction design that respects the user's
+            intelligence.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <div class="highlight-icon">🎮</div>
+              <div class="highlight-title">Game Studio Founder</div>
+              <div class="highlight-sub">Nānmīn Game Studio</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon">🎓</div>
+              <div class="highlight-title">HNDIT Student</div>
+              <div class="highlight-sub">SLIATE, Badulla</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon">🤝</div>
+              <div class="highlight-title">NGO Volunteer</div>
+              <div class="highlight-sub">KFHI Field Data</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon">🌐</div>
+              <div class="highlight-title">Open to Remote</div>
+              <div class="highlight-sub">Worldwide</div>
+            </div>
+          </div>
+
+          <div class="about-links">
+            <a href="https://github.com/madushansivam" class="tag" target="_blank">GitHub ↗</a>
+            <a href="https://linkedin.com/in/madushansivam" class="tag" target="_blank">LinkedIn ↗</a>
+            <a href="https://behance.net/madushasamayas" class="tag" target="_blank">Behance ↗</a>
+            <a href="assets/Madushan_ Frontend Developer_ 015.pdf" class="tag" download>Resume ↓</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     EXPERIENCE / TIMELINE
+     ============================================================ -->
+  <section id="experience">
+    <div class="experience-inner">
+      <div class="experience-header reveal">
+        <div class="section-label">Journey</div>
+        <h2 class="experience-title">Where I've been<br />and where I'm going.</h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot active-dot"></div>
+          <div class="timeline-meta">
+            <span>2023 — Present</span>
+            <span class="timeline-meta-badge current">Current</span>
+          </div>
+          <div class="timeline-role">HNDIT Student</div>
+          <div class="timeline-org">Sri Lanka Institute of Advanced Technological Education (SLIATE)</div>
+          <p class="timeline-desc">Reading for the Higher National Diploma in Information Technology. Building strong
+            foundations in software engineering, web technologies, database systems, and object-oriented programming
+            while pursuing independent creative development projects.</p>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Web Development</span>
+            <span class="timeline-tag">Software Engineering</span>
+            <span class="timeline-tag">OOP</span>
+            <span class="timeline-tag">Database Systems</span>
+            <span class="timeline-tag">Java</span>
+            <span class="timeline-tag">C#</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" style="transition-delay:0.15s">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span>2022 — Present</span>
+            <span class="timeline-meta-badge">Self-Directed</span>
+          </div>
+          <div class="timeline-role">Independent Developer</div>
+          <div class="timeline-org">Open Source · GitHub</div>
+          <p class="timeline-desc">Building production-grade web projects independently: browser games, educational
+            platforms, creative experiments, and utility tools. Shipping real products — not just coursework. Every
+            project is live, documented, and open source.</p>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Vanilla JS</span>
+            <span class="timeline-tag">Three.js</span>
+            <span class="timeline-tag">GSAP</span>
+            <span class="timeline-tag">React</span>
+            <span class="timeline-tag">Canvas API</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PROJECTS — GSAP HORIZONTAL SLIDER
+     ============================================================ -->
+  <section id="projects">
+    <div class="projects-header reveal">
+      <div>
+        <div class="section-label">Selected Work</div>
+        <h2 class="projects-title">Things I've<br />built.</h2>
+      </div>
+      <div class="projects-count" id="proj-total-display">05</div>
+    </div>
+
+    <!-- Slider container -->
+    <div class="slider-section">
+
+      <!-- Overlay: count + info + nav -->
+      <div class="slider-overlay">
+        <div class="slider-overlay-inner">
+
+          <!-- Count display -->
+          <div class="slider-count-row">
+            <div class="slider-count-col" id="step-col">
+              <!-- Steps injected by JS -->
+            </div>
+            <div class="slider-count-divider"></div>
+            <div class="slider-count-col">
+              <h2 data-slide-count="total" class="slider-count-h">05</h2>
+            </div>
+          </div>
+
+          <!-- Active project info -->
+          <div class="slider-proj-info" id="slider-proj-info">
+            <!-- Populated by JS -->
+          </div>
+
+          <!-- Nav buttons -->
+          <div class="slider-nav-row">
+            <button aria-label="Previous slide" data-slider="button-prev" class="slider-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 17 12" fill="none"
+                class="slider-btn-arrow">
+                <path
+                  d="M6.28871 12L7.53907 10.9111L3.48697 6.77778H16.5V5.22222H3.48697L7.53907 1.08889L6.28871 0L0.5 6L6.28871 12Z"
+                  fill="currentColor" />
+              </svg>
+              <div class="slider-btn-corners">
+                <div class="btn-corner"></div>
+                <div class="btn-corner tr"></div>
+                <div class="btn-corner bl"></div>
+                <div class="btn-corner br"></div>
+              </div>
+            </button>
+            <button aria-label="Next slide" data-slider="button-next" class="slider-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 17 12" fill="none"
+                class="slider-btn-arrow next">
+                <path
+                  d="M6.28871 12L7.53907 10.9111L3.48697 6.77778H16.5V5.22222H3.48697L7.53907 1.08889L6.28871 0L0.5 6L6.28871 12Z"
+                  fill="currentColor" />
+              </svg>
+              <div class="slider-btn-corners">
+                <div class="btn-corner"></div>
+                <div class="btn-corner tr"></div>
+                <div class="btn-corner bl"></div>
+                <div class="btn-corner br"></div>
+              </div>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Slide track -->
+      <div class="slider-main">
+        <div class="slider-wrap">
+          <div data-slider="list" class="slider-list" id="slider-list">
+            <!-- Slides injected by JS -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════ SKILLS ══════════════ -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <div class="section-index">03 — CAPABILITIES</div>
+          <h2 class="section-heading">Skills<span class="accent-dot">.</span></h2>
+        </div>
+      </div>
+
+      <div class="skills-layout">
+        <div class="skill-category reveal">
+          <div class="skill-category-title">Frontend Dev</div>
+          <div class="skill-item"><span class="skill-name"><span class="skill-icon">⚡</span>JavaScript /
+              TypeScript</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-width="90"></div>
+            </div>
+          </div>
+          <div class="skill-item"><span class="skill-name"><span class="skill-icon">🎨</span>HTML5 / CSS3</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-width="95"></div>
+            </div>
+          </div>
+          <div class="skill-item"><span class="skill-name"><span class="skill-icon">🧱</span>React</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-width="72"></div>
+            </div>
+          </div>
+          <div class="skill-item"><span class="skill-name"><span class="skill-icon">🌐</span>Three.js</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-width="78"></div>
+            </div>
+          </div>
+          <div class="skill-item"><span class="skill-name"><span class="skill-icon">🖼️</span>Canvas API</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-width="85"></div>
+            </div>
+          </div>
+          <div class="skill-item"><span class="skill-name"><span class="skill-icon">🐍</span>Python</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-width="70"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal" style="transition-delay:0.1s">
+          <div class="skill-category-title">Design & UX</div>
+          <div class="skill-item"><span class="skill-name"><span class="skill-icon">✏️</span>Figma</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-width="82"></div>
+            </div>
+          </div>
+          <div class="skill-item"><span class="skill-name"><span class="skill-icon">🎭</span>UI/UX Design</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-width="80"></div>
+            </div>
+          </div>
+          <div class="skill-item"><span class="skill-name"><span class="skill-icon">🎞️</span>GSAP / Anime.js</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-width="75"></div>
+            </div>
+          </div>
+          <div class="skill-item"><span class="skill-name"><span class="skill-icon">🏗️</span>Responsive Design</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-width="90"></div>
+            </div>
+          </div>
+          <div class="skill-item"><span class="skill-name"><span class="skill-icon">🔤</span>Typography</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-width="82"></div>
+            </div>
+          </div>
+          <div class="skill-item"><span class="skill-name"><span class="skill-icon">📐</span>SVG / Illustration</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-width="68"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal" style="transition-delay:0.2s">
+          <div class="skill-category-title">Game & Backend</div>
+          <div class="skill-item"><span class="skill-name"><span class="skill-icon">🎮</span>Unity / C#</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-width="74"></div>
+            </div>
+          </div>
+          <div class="skill-item"><span class="skill-name"><span class="skill-icon">🔗</span>Netcode for
+              GameObjects</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-width="65"></div>
+            </div>
+          </div>
+          <div class="skill-item"><span class="skill-name"><span class="skill-icon">🔥</span>Firebase</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-width="68"></div>
+            </div>
+          </div>
+          <div class="skill-item"><span class="skill-name"><span class="skill-icon">⚙️</span>Laravel / PHP</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-width="60"></div>
+            </div>
+          </div>
+          <div class="skill-item"><span class="skill-name"><span class="skill-icon">🗃️</span>MySQL</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-width="65"></div>
+            </div>
+          </div>
+          <div class="skill-item"><span class="skill-name"><span class="skill-icon">🤖</span>TensorFlow.js</span>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-width="55"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CASE STUDIES ══════════════ -->
+  <section id="case-studies">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <div class="section-index">04 — PROCESS</div>
+          <h2 class="section-heading">Case Studies<span class="accent-dot">.</span></h2>
+        </div>
+      </div>
+
+      <!-- ImageSync Case Study -->
+      <div class="case-study-item reveal">
+        <div class="case-study-trigger" onclick="toggleCS(this)">
+          <span class="cs-num">01</span>
+          <div class="cs-meta">
+            <h3>ImageSync — Browser-Native Similarity Engine</h3>
+            <p>Tool Design · JavaScript · Performance Engineering</p>
+          </div>
+          <span class="cs-badge">Web App</span>
+          <div class="cs-toggle">+</div>
+        </div>
+        <div class="case-study-body">
+          <div class="case-study-content">
+            <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.8;margin-top:20px;">ImageSync started from
+              a real KFHI field problem: hundreds of child photos from KoBoToolbox surveys needed to be matched and
+              renamed against reference images — manually, one by one. That was clearly broken. I decided to build a
+              browser-native tool that could do it in bulk, instantly, with no server.</p>
+            <div class="cs-process">
+              <div class="cs-step">
+                <div class="cs-step-num">01</div>
+                <h4>Problem Definition</h4>
+                <p>Manual photo matching in NGO fieldwork. Time cost: hours per session. Error rate: high.</p>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-num">02</div>
+                <h4>Research & Algorithm</h4>
+                <p>Evaluated MD5, pHash, dHash, and DCT perceptual hashing. DCT won for robustness against compression
+                  artifacts.</p>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-num">03</div>
+                <h4>Performance Engineering</h4>
+                <p>Moved hashing to Web Worker thread to prevent UI blocking. Binary search compression for output
+                  sizing.</p>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-num">04</div>
+                <h4>UI/UX Design</h4>
+                <p>Obsidian Studio aesthetic — premium dark theme, drag-and-drop zones, confidence score visualization.
+                </p>
+              </div>
+            </div>
+            <div class="cs-outcome">
+              <div class="cs-outcome-title">Result</div>
+              <p>Reduced photo-matching time from hours to minutes. Zero backend required. Used in live KFHI field
+                operations. Full browser — works offline.</p>
+            </div>
+            <div style="margin-top:20px;">
+              <a href="https://madushansivam.github.io/imagesync/" class="btn-primary" target="_blank"
+                style="display:inline-flex;">View Live ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Quiet Protocol Case Study -->
+      <div class="case-study-item reveal" style="transition-delay:0.1s">
+        <div class="case-study-trigger" onclick="toggleCS(this)">
+          <span class="cs-num">02</span>
+          <div class="cs-meta">
+            <h3>The Quiet Protocol — Psychological Horror Game</h3>
+            <p>Game Design · Narrative UX · Web Audio · APOGEE GameJam 2026</p>
+          </div>
+          <span class="cs-badge">Game · Jam Entry</span>
+          <div class="cs-toggle">+</div>
+        </div>
+        <div class="case-study-body">
+          <div class="case-study-content">
+            <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.8;margin-top:20px;">Built for APOGEE
+              GameJam 2026 (BITS Pilani × Postman). The constraint: make a horror game using only document-processing
+              mechanics. No monsters, no jumpscares. Just decisions that compound into silence. The horror is the logic.
+            </p>
+            <div class="cs-process">
+              <div class="cs-step">
+                <div class="cs-step-num">01</div>
+                <h4>Concept & Constraints</h4>
+                <p>48-hour jam. Theme: "The Operator." Built the concept around bureaucratic horror and the Milgram
+                  experiment.</p>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-num">02</div>
+                <h4>Narrative Design</h4>
+                <p>12 turns. Curator arc. Mirror Finale. Memory Quarantine mechanic. Every choice has a cascading
+                  consequence.</p>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-num">03</div>
+                <h4>Technical Build</h4>
+                <p>Single-file HTML. Web Audio API for ambient sound. Surveillance camera animations. Phase 3 visual
+                  distortion effects.</p>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-num">04</div>
+                <h4>v2 Iteration</h4>
+                <p>Added player name personalization, animated cameras, complete sound system rebuild, and enhanced
+                  Phase 3 effects post-jam.</p>
+              </div>
+            </div>
+            <div class="cs-outcome">
+              <div class="cs-outcome-title">Result</div>
+              <p>Completed psychological horror experience in a single HTML file. Demonstrates narrative design, audio
+                engineering, and UX storytelling beyond typical game jam entries.</p>
+            </div>
+            <div style="margin-top:20px;">
+              <a href="https://madushansivam.github.io/The-Quiet-Protocol/" class="btn-primary" target="_blank"
+                style="display:inline-flex;">Play Now ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hēlapidi Case Study -->
+      <div class="case-study-item reveal" style="transition-delay:0.2s">
+        <div class="case-study-trigger" onclick="toggleCS(this)">
+          <span class="cs-num">03</span>
+          <div class="cs-meta">
+            <h3>Hēlapidi — Browser Multiplayer Shooter</h3>
+            <p>Game Development · Multiplayer Systems · Vanilla JavaScript</p>
+          </div>
+          <span class="cs-badge">Game</span>
+          <div class="cs-toggle">+</div>
+        </div>
+        <div class="case-study-body">
+          <div class="case-study-content">
+            <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.8;margin-top:20px;">The premise was
+              simple: what if a Sri Lankan-inspired multiplayer shooter ran entirely in the browser — no Unity, no
+              install, no account? Just open the tab and play with someone next to you. Proving that browser games can
+              have real multiplayer depth.</p>
+            <div class="cs-process">
+              <div class="cs-step">
+                <div class="cs-step-num">01</div>
+                <h4>Architecture Decision</h4>
+                <p>Chose vanilla JavaScript over frameworks. Canvas API for rendering. Delta-time physics for frame-rate
+                  independence.</p>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-num">02</div>
+                <h4>Multiplayer Design</h4>
+                <p>Local multiplayer first — removes backend latency. Designed keyboard layouts for two players on one
+                  keyboard.</p>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-num">03</div>
+                <h4>Cultural Identity</h4>
+                <p>Hēlapidi references traditional Sri Lankan string games. Visual identity and character design reflect
+                  this heritage.</p>
+              </div>
+              <div class="cs-step">
+                <div class="cs-step-num">04</div>
+                <h4>Modular Refactor</h4>
+                <p>Refactored from monolithic script to 18 ES6 modules. Also ported core mechanics to Unity/C# with
+                  Netcode for GameObjects.</p>
+              </div>
+            </div>
+            <div class="cs-outcome">
+              <div class="cs-outcome-title">Result</div>
+              <p>Flagship studio project demonstrating multiplayer systems, game loop engineering, and cultural product
+                positioning — all in a zero-install browser experience.</p>
+            </div>
+            <div style="margin-top:20px;">
+              <a href="https://madushansivam.github.io/helapidi/" class="btn-primary" target="_blank"
+                style="display:inline-flex;">Play ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ BLOG ══════════════ -->
+  <section id="blog">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <div class="section-index">05 — WRITING</div>
+          <h2 class="section-heading">Blog<span class="accent-dot">.</span></h2>
+        </div>
+        <span class="label" style="color:var(--accent)">Coming soon</span>
+      </div>
+
+      <div class="blog-grid">
+        <div class="blog-card reveal">
+          <div class="blog-card-thumb">🎮</div>
+          <div class="blog-card-body">
+            <div class="blog-category">Game Dev</div>
+            <h3>Why I Built a Multiplayer Game in Vanilla JavaScript (And What I Learned)</h3>
+            <p>No framework, no backend, no excuses. Here's what it actually takes to build multiplayer in the browser
+              from scratch.</p>
+            <div class="blog-meta">
+              <span>Coming Soon</span>
+              <span>8 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-card reveal" style="transition-delay:0.1s">
+          <div class="blog-card-thumb">🖼️</div>
+          <div class="blog-card-body">
+            <div class="blog-category">Frontend Engineering</div>
+            <h3>Perceptual Hashing in the Browser: DCT Without a Backend</h3>
+            <p>How I implemented image similarity detection entirely client-side using the Canvas API, Web Workers, and
+              DCT math.</p>
+            <div class="blog-meta">
+              <span>Coming Soon</span>
+              <span>12 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-card reveal" style="transition-delay:0.2s">
+          <div class="blog-card-thumb">🌐</div>
+          <div class="blog-card-body">
+            <div class="blog-category">Career & Studio</div>
+            <h3>Building a Game Studio in Sri Lanka: The Honest Reality</h3>
+            <p>What it's actually like to start an indie game studio in a country where the industry barely exists. The
+              wins, the walls, the why.</p>
+            <div class="blog-meta">
+              <span>Coming Soon</span>
+              <span>6 min read</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CERTIFICATIONS ══════════════ -->
+  <section id="certifications" style="background: var(--bg);">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <div class="section-index">07 — CREDENTIALS</div>
+          <h2 class="section-heading">Certifications<span class="accent-dot">.</span></h2>
+        </div>
+      </div>
+
+      <div class="cert-grid">
+        <div class="cert-card reveal">
+          <div class="cert-icon">🎓</div>
+          <div class="cert-issuer">SLIATE</div>
+          <div class="cert-name">Higher National Diploma in Information Technology (HNDIT)</div>
+          <div class="cert-year">In Progress · 2024–2026</div>
+        </div>
+        <div class="cert-card reveal" style="transition-delay:0.07s">
+          <div class="cert-icon">🌐</div>
+          <div class="cert-issuer">Coursera / Online</div>
+          <div class="cert-name">Responsive Web Design Fundamentals</div>
+          <div class="cert-year">Add Year</div>
+        </div>
+        <div class="cert-card reveal" style="transition-delay:0.14s">
+          <div class="cert-icon">🎮</div>
+          <div class="cert-issuer">Unity Technologies</div>
+          <div class="cert-name">Unity Junior Programmer Pathway</div>
+          <div class="cert-year">Add Year</div>
+        </div>
+        <div class="cert-card reveal" style="transition-delay:0.21s">
+          <div class="cert-icon">🏆</div>
+          <div class="cert-issuer">APOGEE GameJam 2026</div>
+          <div class="cert-name">Game Jam Participant — BITS Pilani × Postman</div>
+          <div class="cert-year">2026</div>
+        </div>
+      </div>
+
+      <div class="testimonials-note reveal" style="transition-delay:0.3s;margin-top:24px;">
+        <p>Fill in your actual certifications — Coursera, LinkedIn Learning, freeCodeCamp, etc. Every real cert adds
+          credibility signal.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CONTACT ══════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <div class="section-index">08 — GET IN TOUCH</div>
+          <h2 class="section-heading">Contact<span class="accent-dot">.</span></h2>
+        </div>
+      </div>
+
+      <div class="contact-layout">
+        <div class="reveal">
+          <div class="contact-text">
+            <h2>Let's build something worth remembering.</h2>
+            <p>I'm currently open to frontend roles, UI/UX contracts, freelance projects, and remote work globally. If
+              you have something interesting, I want to hear about it. If it's boring, I'll tell you.</p>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="ci-icon">📧</div>
+            <div>
+              <div class="ci-label">Email</div>
+              <div class="ci-text"><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                  data-cfemail="b1d9d4dddddef1dcd0d5c4c2d9d0dfc2d8c7d0dc9fd5d4c7"><span class="__cf_email__"
+                    data-cfemail="f499959081879c959a879d829599b49399959d98da979b99">madushansivam@gmail.com</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon">📍</div>
+            <div>
+              <div class="ci-label">Location</div>
+              <div class="ci-text">Badulla, Sri Lanka — Open to Remote Worldwide</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon">⏱️</div>
+            <div>
+              <div class="ci-label">Response Time</div>
+              <div class="ci-text">Usually within 24 hours</div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="ci-icon">🌐</div>
+            <div>
+              <div class="ci-label">Portfolio</div>
+              <div class="ci-text"><a href="https://madushansivam.github.io/portfolio"
+                  style="color:var(--accent);border-bottom:1px solid var(--accent);"
+                  target="_blank">madushansivam.github.io/portfolio ↗</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal" style="transition-delay:0.15s">
+          <form class="contact-form" onsubmit="handleForm(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" placeholder="your@email.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Subject</label>
+              <input type="text" class="form-control" placeholder="Project idea, job opportunity, collaboration..."
+                required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" placeholder="Tell me about what you're building..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="align-self:flex-start;">
+              Send Message
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">Madushan Sivam<span>.</span></div>
+        <div class="footer-links">
+          <a href="https://github.com/madushansivam" target="_blank">GitHub</a>
+          <a href="https://linkedin.com/in/madushansivam" target="_blank">LinkedIn</a>
+          <a href="https://behance.net/madushasamayas" target="_blank">Behance</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-copy">© 2025 Madushan Samayasivam — All rights reserved</div>
+      </div>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
