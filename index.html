@@ -1777,7 +1777,8 @@
 
     .slider-count-col {
       height: 1em;
-      overflow: hidden
+      overflow: hidden;
+      align-self: flex-start;
     }
 
     .slider-count-h {
@@ -3228,7 +3229,7 @@
         center: true, draggable: true, repeat: -1, onChange: (element, index) => {
           slides.forEach(s => s.classList.remove('active')); element.classList.add('active');
           const steps = stepCol.querySelectorAll('[data-slide-count="step"]'), offset = steps[0].offsetHeight;
-          gsap.to(stepCol, { y: -index * offset, duration: 0.6, ease: 'power3.out' });
+          gsap.to(steps, { y: -index * offset, duration: 0.6, ease: 'power3.out' });
           renderProjInfo(index % totalSlides);
         }
       });
