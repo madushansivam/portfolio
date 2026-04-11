@@ -1735,6 +1735,7 @@
     .slider-section {
       position: relative;
       min-height: 520px;
+      height: 520px;
       font-size: 1.1vw;
       display: flex;
       align-items: center
@@ -3014,7 +3015,9 @@
             <div>
               <div class="ci-label">Email</div>
               <div class="ci-text"><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                  data-cfemail="b1d9d4dddddef1dcd0d5c4c2d9d0dfc2d8c7d0dc9fd5d4c7">[madushansivam@gmail.com]</a></div>
+                  data-cfemail="b1d9d4dddddef1dcd0d5c4c2d9d0dfc2d8c7d0dc9fd5d4c7">[<span class="__cf_email__"
+                    data-cfemail="f499959081879c959a879d829599b49399959d98da979b99">[email&#160;protected]</span>]</a>
+              </div>
             </div>
           </div>
           <div class="contact-info-item">
@@ -3091,6 +3094,7 @@
     </div>
   </footer>
 
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script>
     /* ══ CURSOR ══ */
@@ -3201,7 +3205,7 @@
       PROJECTS.forEach((proj, i) => {
         const slide = document.createElement('div');
         slide.setAttribute('data-slider', 'slide');
-        slide.className = 'slider-slide' + (i === 0 ? ' active' : '');
+        slide.className = 'slider-slide' + (i === 1 ? ' active' : '');
         slide.innerHTML = `<div class="slide-inner">${buildThumbSVG(proj, i)}<div class="slide-caption"><div class="caption-dot"></div><p class="caption-text">${String(i + 1).padStart(2, '0')} / ${proj.name}</p></div></div>`;
         list.appendChild(slide);
         const h = document.createElement('h2');
@@ -3212,7 +3216,7 @@
       });
       document.querySelector('[data-slide-count="total"]').textContent = String(PROJECTS.length).padStart(2, '0');
       document.getElementById('proj-total-display').textContent = String(PROJECTS.length).padStart(2, '0');
-      renderProjInfo(0);
+      renderProjInfo(1);
     })();
 
     function renderProjInfo(idx) {
@@ -3226,11 +3230,16 @@
     (function initSlider() {
       const slides = gsap.utils.toArray('[data-slider="slide"]'), nextBtn = document.querySelector('[data-slider="button-next"]'), prevBtn = document.querySelector('[data-slider="button-prev"]'), stepCol = document.getElementById('step-col'), totalSlides = PROJECTS.length;
       const loop = horizontalLoop(slides, {
-        center: true, draggable: true, repeat: -1, onChange: (element, index) => {
-          slides.forEach(s => s.classList.remove('active')); element.classList.add('active');
-          const steps = stepCol.querySelectorAll('[data-slide-count="step"]'), offset = steps[0].offsetHeight;
-          gsap.to(steps, { y: -index * offset, duration: 0.6, ease: 'power3.out' });
-          renderProjInfo(index % totalSlides);
+        center: false, draggable: true, repeat: -1, onChange: (element, index) => {
+          slides.forEach(s => s.classList.remove('active'));
+          // Offset design: the visually highlighted slide is the NEXT sibling of GSAP's current element
+          const next = element.nextElementSibling || slides[0];
+          next.classList.add('active');
+          const steps = stepCol.querySelectorAll('[data-slide-count="step"]');
+          const offset = steps[0] ? steps[0].offsetHeight : 0;
+          const activeIdx = slides.indexOf(next);
+          gsap.to(steps, { y: -activeIdx * offset, duration: 0.6, ease: 'power3.out' });
+          renderProjInfo(activeIdx % totalSlides);
         }
       });
       slides.forEach((slide, i) => slide.addEventListener('click', () => loop.toIndex(i - 1, { ease: 'power3', duration: 0.725 })));
