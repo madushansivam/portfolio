@@ -80,60 +80,18 @@ function handleForm(e) {
 }
 /* PROJECT DATA */
 const PROJECTS = [
-    {
-        name: 'IMAGESYNC',
-        desc: 'High-performance image similarity matcher...',
-        image: 'assets/projects/imagesync.webp',
-        tags: ['JavaScript', 'Canvas API', 'DCT Hashing'],
-        special: [],
-        href: 'https://madushansivam.github.io/imagesync/',
-        accent: '#FF1E1E',
-        svgScene: 'wave'
-    },
-    {
-        name: 'THE QUIET PROTOCOL',
-        desc: 'A psychological document-processing simulator...',
-        image: 'assets/projects/quiet-protocol.webp',
-        tags: ['Vanilla JS', 'HTML', 'Narrative Design'],
-        special: ['EXPERIMENTAL'],
-        href: 'https://madushansivam.github.io/The-Quiet-Protocol/',
-        accent: '#C0C0C0',
-        svgScene: 'noise'
-    },
-    {
-        name: 'PROG. MASTERY',
-        desc: 'Interactive learning platform...',
-        image: 'assets/projects/prog-mastery.webp',
-        tags: ['HTML5', 'CSS3', 'JavaScript'],
-        special: [],
-        href: 'https://madushansivam.github.io/Programming-Mastery-Learning-Tool/',
-        accent: '#B8926A',
-        svgScene: 'blocks'
-    },
-    {
-        name: 'GUARDIANS OF THE WILD',
-        desc: 'Wildlife conservation landing page...',
-        image: 'assets/projects/guardians.webp',
-        tags: ['GSAP', 'HTML', 'CSS', 'Editorial Design'],
-        special: [],
-        href: 'https://madushansivam.github.io/guardians-of-the-wild/',
-        accent: '#4CAF50',
-        svgScene: 'organic'
-    },
-    {
-        name: 'HELAPIDI',
-        desc: 'A 2D browser-based local multiplayer shooter...',
-        image: 'assets/HELAPIDI.png',
-        tags: ['Vanilla JS', 'Canvas API', 'Game Dev'],
-        special: ['FEATURED'],
-        href: 'https://madushansivam.github.io/helapidi/',
-        accent: '#c8ff47',
-        svgScene: 'grid'
-    }
+    { name: 'IMAGESYNC', desc: 'High-performance image similarity matcher and batch file renamer. Perceptual hashing runs entirely in the browser — privacy-first, zero server.', tags: ['JavaScript', 'Canvas API', 'DCT Hashing'], special: [], href: 'https://madushansivam.github.io/imagesync/', accent: '#FF1E1E', svgScene: 'wave', img: 'assets/IMAGESYNC.png' },
+    { name: 'THE QUIET PROTOCOL', desc: 'A psychological document-processing simulator. You are the operator. Every decision is logical. By Turn 12, the world is silent.', tags: ['Vanilla JS', 'HTML', 'Narrative Design'], special: ['EXPERIMENTAL'], href: 'https://madushansivam.github.io/The-Quiet-Protocol/', accent: '#C0C0C0', svgScene: 'noise', img: 'assets/THE_QUIET_PROTOCOL.png' },
+    { name: 'PROG. MASTERY', desc: 'Interactive learning platform for HNDIT students at ATI Badulla. Self-paced tutorials, coding exercises, real-time feedback across HTML, CSS, JS, Java & C#.', tags: ['HTML5', 'CSS3', 'JavaScript'], special: [], href: 'https://madushansivam.github.io/Programming-Mastery-Learning-Tool/', accent: '#B8926A', svgScene: 'blocks', img: 'assets/PROG_MASTERY.png' },
+    { name: 'GUARDIANS OF THE WILD', desc: 'Wildlife conservation landing page with GSAP-animated species slider, editorial scroll effects, and immersive editorial design.', tags: ['GSAP', 'HTML', 'CSS', 'Editorial Design'], special: [], href: 'https://madushansivam.github.io/guardians-of-the-wild/', accent: '#4CAF50', svgScene: 'organic', img: 'assets/GUARDIANS_OF_THE_WILD.png' },
+    { name: 'HELAPIDI', desc: 'A 2D browser-based local multiplayer shooter inspired by Sri Lankan culture. Vanilla JS. No install. Just open and play.', tags: ['Vanilla JS', 'Canvas API', 'Game Dev'], special: ['FEATURED'], href: 'https://madushansivam.github.io/helapidi/', accent: '#c8ff47', svgScene: 'grid', img: null }
 ];
 
-
 function buildThumbSVG(project, idx) {
+    // If project has a real image, render it as <img> with a dark overlay for the caption
+    if (project.img) {
+        return `<div class="slide-img-wrap"><img src="${project.img}" alt="${project.name}" loading="lazy" class="slide-img"/><div class="slide-img-overlay" style="--accent:${project.accent}"></div></div>`;
+    }
     const a = project.accent;
     const hex2rgba = (hex, alpha) => { const r = parseInt(hex.slice(1, 3), 16), g = parseInt(hex.slice(3, 5), 16), b = parseInt(hex.slice(5, 7), 16); return `rgba(${r},${g},${b},${alpha})`; };
     const scenes = {
@@ -306,3 +264,57 @@ if (mbtn) { mbtn.addEventListener('mousemove', e => { const r = mbtn.getBounding
 /* REVEAL OBSERVER for v1 sections */
 const v1RevealIO = new IntersectionObserver(entries => { entries.forEach(e => { if (!e.isIntersecting) return; const el = e.target; const delay = parseFloat(el.style.transitionDelay || '0'); setTimeout(() => el.classList.add('visible'), delay * 1000); v1RevealIO.unobserve(el); }); }, { threshold: 0.12 });
 document.querySelectorAll('#experience .reveal, #projects .reveal').forEach(el => v1RevealIO.observe(el));
+
+/* ══ ABOUT PHOTO SLIDESHOW ══ */
+(function initAboutSlideshow() {
+    const photos = ['assets/madu_1.jpg', 'assets/madu_2.jpeg', 'assets/madu_3.jpeg'];
+    const frame = document.querySelector('.about-photo-frame');
+    if (!frame) return;
+
+    // Build slideshow structure
+    frame.innerHTML = '';
+    frame.style.overflow = 'hidden';
+    frame.style.position = 'relative';
+
+    const slides = photos.map((src, i) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = 'Madushan Samayasivam';
+        img.loading = i === 0 ? 'eager' : 'lazy';
+        img.className = 'about-slideshow-img';
+        img.style.cssText = `
+            position: absolute; inset: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: ${i === 0 ? 1 : 0};
+            transition: opacity 1.1s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: opacity;
+        `;
+        frame.appendChild(img);
+        return img;
+    });
+
+    // Dot indicators
+    const dotsWrap = document.createElement('div');
+    dotsWrap.style.cssText = 'position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:3;';
+    const dots = photos.map((_, i) => {
+        const d = document.createElement('div');
+        d.style.cssText = `width:5px;height:5px;border-radius:50%;background:${i === 0 ? 'var(--accent)' : 'rgba(255,255,255,0.35)'};transition:background 0.4s,transform 0.4s;${i === 0 ? 'transform:scale(1.3)' : ''}`;
+        dotsWrap.appendChild(d);
+        return d;
+    });
+    frame.appendChild(dotsWrap);
+
+    let current = 0;
+    function goTo(next) {
+        slides[current].style.opacity = '0';
+        dots[current].style.background = 'rgba(255,255,255,0.35)';
+        dots[current].style.transform = 'scale(1)';
+        current = next;
+        slides[current].style.opacity = '1';
+        dots[current].style.background = 'var(--accent)';
+        dots[current].style.transform = 'scale(1.3)';
+    }
+
+    setInterval(() => goTo((current + 1) % photos.length), 3500);
+})();
