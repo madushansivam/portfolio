@@ -80,17 +80,11 @@ function handleForm(e) {
 }
 /* PROJECT DATA */
 const PROJECTS = [
-
     { name: 'IMAGESYNC', desc: 'High-performance image similarity matcher and batch file renamer. Perceptual hashing runs entirely in the browser — privacy-first, zero server.', tags: ['JavaScript', 'Canvas API', 'DCT Hashing'], special: [], href: 'https://madushansivam.github.io/imagesync/', accent: '#FF1E1E', svgScene: 'wave', img: 'assets/IMAGESYNC.png' },
-
     { name: 'THE QUIET PROTOCOL', desc: 'A psychological document-processing simulator. You are the operator. Every decision is logical. By Turn 12, the world is silent.', tags: ['Vanilla JS', 'HTML', 'Narrative Design'], special: ['EXPERIMENTAL'], href: 'https://madushansivam.github.io/The-Quiet-Protocol/', accent: '#C0C0C0', svgScene: 'noise', img: 'assets/THE QUIET PROTOCOL.png' },
-
     { name: 'PROG. MASTERY', desc: 'Interactive learning platform for HNDIT students at ATI Badulla. Self-paced tutorials, coding exercises, real-time feedback across HTML, CSS, JS, Java & C#.', tags: ['HTML5', 'CSS3', 'JavaScript'], special: [], href: 'https://madushansivam.github.io/Programming-Mastery-Learning-Tool/', accent: '#B8926A', svgScene: 'blocks', img: 'assets/PROG.MASTERY.png' },
-
     { name: 'GUARDIANS OF THE WILD', desc: 'Wildlife conservation landing page with GSAP-animated species slider, editorial scroll effects, and immersive editorial design.', tags: ['GSAP', 'HTML', 'CSS', 'Editorial Design'], special: [], href: 'https://madushansivam.github.io/guardians-of-the-wild/', accent: '#4CAF50', svgScene: 'organic', img: 'assets/GUARDIANS OF THE WILD.png' },
-
     { name: 'HELAPIDI', desc: 'A 2D browser-based local multiplayer shooter inspired by Sri Lankan culture. Vanilla JS. No install. Just open and play.', tags: ['Vanilla JS', 'Canvas API', 'Game Dev'], special: ['FEATURED'], href: 'https://madushansivam.github.io/helapidi/', accent: '#c8ff47', svgScene: 'grid', img: 'assets/HELAPIDI.png' }
-
 ];
 
 function buildThumbSVG(project, idx) {
@@ -141,7 +135,7 @@ function renderProjInfo(idx) {
 (function initSlider() {
     const slides = gsap.utils.toArray('[data-slider="slide"]'), nextBtn = document.querySelector('[data-slider="button-next"]'), prevBtn = document.querySelector('[data-slider="button-prev"]'), stepCol = document.getElementById('step-col'), totalSlides = PROJECTS.length;
     const loop = horizontalLoop(slides, {
-        center: false, draggable: true, repeat: -1, onChange: (element, index) => {
+        center: false, draggable: true, repeat: -1, speed: 0.3, onChange: (element, index) => {
             slides.forEach(s => s.classList.remove('active'));
             // Offset design: the visually highlighted slide is the NEXT sibling of GSAP's current element
             const next = element.nextElementSibling || slides[0];
@@ -153,9 +147,9 @@ function renderProjInfo(idx) {
             renderProjInfo(activeIdx % totalSlides);
         }
     });
-    slides.forEach((slide, i) => slide.addEventListener('click', () => loop.toIndex(i - 1, { ease: 'power3', duration: 0.725 })));
-    nextBtn.addEventListener('click', () => loop.next({ ease: 'power3', duration: 0.725 }));
-    prevBtn.addEventListener('click', () => loop.previous({ ease: 'power3', duration: 0.725 }));
+    slides.forEach((slide, i) => slide.addEventListener('click', () => loop.toIndex(i - 1, { ease: 'power3', duration: 1.6 })));
+    nextBtn.addEventListener('click', () => loop.next({ ease: 'power3', duration: 1.6 }));
+    prevBtn.addEventListener('click', () => loop.previous({ ease: 'power3', duration: 1.6 }));
 
     function horizontalLoop(items, config) {
         let timeline; items = gsap.utils.toArray(items); config = config || {};
