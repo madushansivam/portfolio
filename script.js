@@ -287,7 +287,7 @@ document.querySelectorAll('#experience .reveal, #projects .reveal').forEach(el =
             width: 100%; height: 100%;
             object-fit: cover;
             opacity: ${i === 0 ? 1 : 0};
-            transition: opacity 1.1s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 1.8s cubic-bezier(0.4, 0, 0.2, 1);
             will-change: opacity;
         `;
         frame.appendChild(img);
@@ -316,5 +316,5 @@ document.querySelectorAll('#experience .reveal, #projects .reveal').forEach(el =
         dots[current].style.transform = 'scale(1.3)';
     }
 
-    setInterval(() => goTo((current + 1) % photos.length), 3500);
+    setInterval(() => goTo((current + 1) % photos.length), 6000);
 })();
