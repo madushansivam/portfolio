@@ -904,8 +904,8 @@
 
     .skills-layout {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 32px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 24px;
     }
 
     .skill-category {
@@ -1844,6 +1844,11 @@
         color: var(--lime)
     }
 
+    .slider-tag.devops {
+        border-color: #2496ED;
+        color: #2496ED
+    }
+
     .slider-nav-row {
         display: flex;
         gap: 2em
@@ -2224,6 +2229,10 @@
         #music-btn {
             bottom: 1.5rem;
             right: 1.5rem
+        }
+
+        .skills-layout {
+            grid-template-columns: 1fr 1fr;
         }
     }
 
