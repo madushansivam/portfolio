@@ -80,9 +80,10 @@ function handleForm(e) {
 }
 /* PROJECT DATA */
 const PROJECTS = [
+    { name: 'CONTAINERDROP', desc: 'Dockerized Node.js REST API deployed on AWS EC2. Multi-stage Alpine build (55MB image), CRUD task endpoints, HEALTHCHECK, pushed to DockerHub. First production infrastructure project.', tags: ['Docker', 'Node.js', 'AWS EC2', 'Linux'], special: ['DEVOPS'], href: 'https://github.com/madushansivam/containerdrop', accent: '#2496ED', svgScene: 'grid', img: null },
     { name: 'IMAGESYNC', desc: 'High-performance image similarity matcher and batch file renamer. Perceptual hashing runs entirely in the browser — privacy-first, zero server.', tags: ['JavaScript', 'Canvas API', 'DCT Hashing'], special: [], href: 'https://madushansivam.github.io/imagesync/', accent: '#FF1E1E', svgScene: 'wave', img: 'assets/IMAGESYNC.png' },
     { name: 'THE QUIET PROTOCOL', desc: 'A psychological document-processing simulator. You are the operator. Every decision is logical. By Turn 12, the world is silent.', tags: ['Vanilla JS', 'HTML', 'Narrative Design'], special: ['EXPERIMENTAL'], href: 'https://madushansivam.github.io/The-Quiet-Protocol/', accent: '#C0C0C0', svgScene: 'noise', img: 'assets/THE QUIET PROTOCOL.png' },
-    { name: 'PROG. MASTERY', desc: 'Interactive learning platform for HNDIT students at ATI Badulla. Self-paced tutorials, coding exercises, real-time feedback across HTML, CSS, JS, Java & C#.', tags: ['HTML5', 'CSS3', 'JavaScript'], special: [], href: 'https://madushansivam.github.io/Programming-Mastery-Learning-Tool/', accent: '#B8926A', svgScene: 'blocks', img: 'assets/PROG.MASTERY.png' },
+    { name: 'PROG. MASTERY', desc: 'Interactive learning platform with self-paced tutorials, live coding exercises, and real-time feedback across HTML, CSS, JavaScript, Java and C#.', tags: ['HTML5', 'CSS3', 'JavaScript'], special: [], href: 'https://madushansivam.github.io/Programming-Mastery-Learning-Tool/', accent: '#B8926A', svgScene: 'blocks', img: 'assets/PROG.MASTERY.png' },
     { name: 'GUARDIANS OF THE WILD', desc: 'Wildlife conservation landing page with GSAP-animated species slider, editorial scroll effects, and immersive editorial design.', tags: ['GSAP', 'HTML', 'CSS', 'Editorial Design'], special: [], href: 'https://madushansivam.github.io/guardians-of-the-wild/', accent: '#4CAF50', svgScene: 'organic', img: 'assets/GUARDIANS OF THE WILD.png' },
     { name: 'HELAPIDI', desc: 'A 2D browser-based local multiplayer shooter inspired by Sri Lankan culture. Vanilla JS. No install. Just open and play.', tags: ['Vanilla JS', 'Canvas API', 'Game Dev'], special: ['FEATURED'], href: 'https://madushansivam.github.io/helapidi/', accent: '#c8ff47', svgScene: 'grid', img: 'assets/HELAPIDI.png' }
 ];
@@ -126,7 +127,7 @@ function buildThumbSVG(project, idx) {
 
 function renderProjInfo(idx) {
     const p = PROJECTS[idx], box = document.getElementById('slider-proj-info');
-    const specialTags = p.special.map(s => `<span class="slider-tag ${s === 'ONGOING' ? 'ongoing' : s === 'EXPERIMENTAL' ? 'featured' : 'ongoing'}">${s}</span>`).join('');
+    const specialTags = p.special.map(s => `<span class="slider-tag ${s === 'DEVOPS' ? 'devops' : s === 'FEATURED' ? 'featured' : s === 'EXPERIMENTAL' ? 'featured' : 'ongoing'}">${s}</span>`).join('');
     const techTags = p.tags.map(t => `<span class="slider-tag">${t}</span>`).join('');
     box.innerHTML = `<p class="slider-proj-name">${p.name}</p><p class="slider-proj-desc">${p.desc}</p>${p.href && p.href !== '#' ? `<a href="${p.href}" target="_blank" rel="noopener" class="slider-proj-link">View Live ↗</a>` : ''}<div class="slider-proj-tags">${specialTags}${techTags}</div>`;
 }
