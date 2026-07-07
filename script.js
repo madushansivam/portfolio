@@ -82,9 +82,9 @@ function handleForm(e) {
 const PROJECTS = [
     { name: 'CONTAINERDROP', desc: 'Dockerized Node.js REST API deployed on AWS EC2. Multi-stage Alpine build (55MB image), CRUD task endpoints, HEALTHCHECK, pushed to DockerHub. First production infrastructure project.', tags: ['Docker', 'Node.js', 'AWS EC2', 'Linux'], special: ['DEVOPS'], href: 'https://github.com/madushansivam/containerdrop', accent: '#2496ED', svgScene: 'grid', img: null },
     { name: 'IMAGESYNC', desc: 'High-performance image similarity matcher and batch file renamer. Perceptual hashing runs entirely in the browser — privacy-first, zero server.', tags: ['JavaScript', 'Canvas API', 'DCT Hashing'], special: [], href: 'https://madushansivam.github.io/imagesync/', accent: '#FF1E1E', svgScene: 'wave', img: 'assets/IMAGESYNC.png' },
-    { name: 'THE QUIET PROTOCOL', desc: 'A psychological document-processing simulator. You are the operator. Every decision is logical. By Turn 12, the world is silent.', tags: ['Vanilla JS', 'HTML', 'Narrative Design'], special: ['EXPERIMENTAL'], href: 'https://madushansivam.github.io/The-Quiet-Protocol/', accent: '#C0C0C0', svgScene: 'noise', img: 'assets/THE QUIET PROTOCOL.png' },
-    { name: 'PROG. MASTERY', desc: 'Interactive learning platform with self-paced tutorials, live coding exercises, and real-time feedback across HTML, CSS, JavaScript, Java and C#.', tags: ['HTML5', 'CSS3', 'JavaScript'], special: [], href: 'https://madushansivam.github.io/Programming-Mastery-Learning-Tool/', accent: '#B8926A', svgScene: 'blocks', img: 'assets/PROG.MASTERY.png' },
-    { name: 'GUARDIANS OF THE WILD', desc: 'Wildlife conservation landing page with GSAP-animated species slider, editorial scroll effects, and immersive editorial design.', tags: ['GSAP', 'HTML', 'CSS', 'Editorial Design'], special: [], href: 'https://madushansivam.github.io/guardians-of-the-wild/', accent: '#4CAF50', svgScene: 'organic', img: 'assets/GUARDIANS OF THE WILD.png' },
+    { name: 'THE QUIET PROTOCOL', desc: 'A psychological document-processing simulator. You are the operator. Every decision is logical. By Turn 12, the world is silent.', tags: ['Vanilla JS', 'HTML', 'Narrative Design'], special: ['EXPERIMENTAL'], href: 'https://madushansivam.github.io/The-Quiet-Protocol/', accent: '#C0C0C0', svgScene: 'noise', img: 'assets/THE_QUIET_PROTOCOL.png' },
+    { name: 'PROG. MASTERY', desc: 'Interactive learning platform with self-paced tutorials, live coding exercises, and real-time feedback across HTML, CSS, JavaScript, Java and C#.', tags: ['HTML5', 'CSS3', 'JavaScript'], special: [], href: 'https://madushansivam.github.io/Programming-Mastery-Learning-Tool/', accent: '#B8926A', svgScene: 'blocks', img: 'assets/PROG_MASTERY.png' },
+    { name: 'GUARDIANS OF THE WILD', desc: 'Wildlife conservation landing page with GSAP-animated species slider, editorial scroll effects, and immersive editorial design.', tags: ['GSAP', 'HTML', 'CSS', 'Editorial Design'], special: [], href: 'https://madushansivam.github.io/guardians-of-the-wild/', accent: '#4CAF50', svgScene: 'organic', img: 'assets/GUARDIANS_OF_THE_WILD.png' },
     { name: 'HELAPIDI', desc: 'A 2D browser-based local multiplayer shooter inspired by Sri Lankan culture. Vanilla JS. No install. Just open and play.', tags: ['Vanilla JS', 'Canvas API', 'Game Dev'], special: ['FEATURED'], href: 'https://madushansivam.github.io/helapidi/', accent: '#c8ff47', svgScene: 'grid', img: 'assets/HELAPIDI.png' }
 ];
 
@@ -225,7 +225,7 @@ const nameFirst = document.getElementById('name-first'), nameLast = document.get
 if (nameFirst && nameLast) { document.addEventListener('mousemove', e => { const x = (e.clientX / window.innerWidth - 0.5); nameFirst.style.transform = `translateX(${x * 40}px)`; nameLast.style.transform = `translateX(${x * -40}px)`; }); }
 
 /* MARQUEE BUILD */
-const mWords = [{ t: 'FRONTEND DEVELOPER', c: 'cream' }, { t: '·', c: 'sep' }, { t: 'UI/UX DESIGNER', c: 'crimson' }, { t: '·', c: 'sep' }, { t: 'VANILLA JS', c: 'cream' }, { t: '·', c: 'sep' }, { t: 'THREE.JS', c: 'crimson' }, { t: '·', c: 'sep' }, { t: 'GSAP', c: 'cream' }, { t: '·', c: 'sep' }, { t: 'IMAGESYNC', c: 'crimson' }, { t: '·', c: 'sep' }, { t: 'HELAPIDI', c: 'cream' }, { t: '·', c: 'sep' }, { t: 'SRI LANKA', c: 'crimson' }, { t: '·', c: 'sep' }, { t: 'HNDIT · SLIATE', c: 'cream' }, { t: '·', c: 'sep' }];
+const mWords = [{ t: 'DEVOPS ENGINEER', c: 'crimson' }, { t: '·', c: 'sep' }, { t: 'FRONTEND DEVELOPER', c: 'cream' }, { t: '·', c: 'sep' }, { t: 'UI/UX DESIGNER', c: 'crimson' }, { t: '·', c: 'sep' }, { t: 'VANILLA JS', c: 'cream' }, { t: '·', c: 'sep' }, { t: 'THREE.JS', c: 'crimson' }, { t: '·', c: 'sep' }, { t: 'GSAP', c: 'cream' }, { t: '·', c: 'sep' }, { t: 'IMAGESYNC', c: 'crimson' }, { t: '·', c: 'sep' }, { t: 'HELAPIDI', c: 'cream' }, { t: '·', c: 'sep' }, { t: 'SRI LANKA', c: 'crimson' }, { t: '·', c: 'sep' }, { t: 'HNDIT · SLIATE', c: 'cream' }, { t: '·', c: 'sep' }];
 const mTrack = document.getElementById('marquee-track');
 if (mTrack) { [...mWords, ...mWords, ...mWords, ...mWords].forEach(w => { const span = document.createElement('span'); span.className = 'marquee-item ' + w.c; span.textContent = w.t; mTrack.appendChild(span); }); }
 
@@ -266,11 +266,24 @@ if (mbtn) { mbtn.addEventListener('mousemove', e => { const r = mbtn.getBounding
 const v1RevealIO = new IntersectionObserver(entries => { entries.forEach(e => { if (!e.isIntersecting) return; const el = e.target; const delay = parseFloat(el.style.transitionDelay || '0'); setTimeout(() => el.classList.add('visible'), delay * 1000); v1RevealIO.unobserve(el); }); }, { threshold: 0.12 });
 document.querySelectorAll('#experience .reveal, #projects .reveal').forEach(el => v1RevealIO.observe(el));
 
-/* ══ ABOUT PHOTO SLIDESHOW ══ */
+/* ══ ABOUT PHOTO ══ */
 (function initAboutSlideshow() {
-    const photos = ['assets/madu_1.jpg', 'assets/madu_2.jpeg', 'assets/madu_3.jpeg'];
+    // Only one real photo currently exists. Add more filenames to this array
+    // (and re-enable the carousel dots below) once you have additional photos.
+    const photos = ['assets/madu_1.jpeg'];
     const frame = document.querySelector('.about-photo-frame');
     if (!frame) return;
+
+    if (photos.length === 1) {
+        // Single photo: keep it simple, no carousel needed
+        const img = frame.querySelector('img') || document.createElement('img');
+        img.src = photos[0];
+        img.alt = 'Madushan Samayasivam';
+        img.loading = 'eager';
+        img.style.cssText = 'width:100%;height:100%;object-fit:cover;';
+        if (!frame.contains(img)) frame.appendChild(img);
+        return;
+    }
 
     // Build slideshow structure
     frame.innerHTML = '';
